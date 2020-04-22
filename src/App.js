@@ -13,16 +13,22 @@ const App = () => {
 
   return (
     <>
-      <img className='logo' src={logo} alt='logo' title='Logo de Rick y Morty'></img>
-      <ul>
-        {items.map((item) => (
-          <li key={item.id}>
-            <img src={item.image} alt={item.name} title={`picture of ${item.name}`}></img>
-            <h2>{item.name}</h2>
-            <p>{item.specie}</p>
-          </li>
-        ))}
-      </ul>
+      <header>
+        <img className='logo' src={logo} alt='logo' title='Logo de Rick y Morty'></img>
+      </header>
+      <main>
+        <ul className='list'>
+          {items.map((item) => (
+            <li className='item' key={item.id}>
+              <img className='item__img' src={item.image} alt={item.name} title={`picture of ${item.name}`}></img>
+              <div className='item__text'>
+                <h2 className='item__name'>{item.name}</h2>
+                <p className='item__attribute'>{item.specie}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </main>
     </>
   );
 };
