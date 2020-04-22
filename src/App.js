@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <>
-      <img src={logo} alt='logo' title='Logo de Rick y Morty'></img>
+      <img className='logo' src={logo} alt='logo' title='Logo de Rick y Morty'></img>
       <ul>
         {items.map((item) => (
           <li key={item.id}>
