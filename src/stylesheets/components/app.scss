@@ -12,6 +12,9 @@
   grid-gap: 1rem;
   margin: 6rem;
   @media all and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media all and (min-width: 1200px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
