@@ -1,11 +1,28 @@
 import React from 'react';
 import getDataFromApi from './service/Api';
+import { useState, useEffect } from 'react';
+import logo from './info/logo.png';
 const App = () => {
-  getDataFromApi().then((data) => console.log(data));
+  let [items, setItems] = useState([]);
+  useEffect(() => {
+    getDataFromApi().then((data) => {
+      console.log(data);
+      setItems(data);
+    });
+  }, []);
+
   return (
     <>
-      <img src='https://help.redbubble.com/hc/article_attachments/360002309526/Rick_and_Morty_-_logo__English_.png' alt='logo' title='Logo de Rick y Morty'></img>
-      <ul></ul>
+      <img src={logo} alt='logo' title='Logo de Rick y Morty'></img>
+      <ul>
+        {items.map((item) => (
+          <li key={item.id}>
+            <img src={item.image} alt={item.name} title={`picture of ${item.name}`}></img>
+            <h2>{item.name}</h2>
+            <p>{item.specie}</p>
+          </li>
+        ))}
+      </ul>
     </>
   );
 };

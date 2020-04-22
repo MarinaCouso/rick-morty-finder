@@ -4,7 +4,7 @@ const getDataFromApi = () => {
       return response.json();
     })
     .then((data) => {
-      return { id: data.results };
+      return data.results.map((item) => (item = { id: item.id, name: item.name, image: item.image, specie: item.species }));
     });
 };
 
