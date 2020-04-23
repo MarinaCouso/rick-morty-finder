@@ -2,6 +2,7 @@ import React from 'react';
 import getDataFromApi from './service/Api';
 import { useState, useEffect } from 'react';
 import logo from './images/logo.png';
+import Filter from './components/Filter';
 const App = () => {
   let [items, setItems] = useState([]);
   let [search, setSearch] = useState('');
@@ -11,10 +12,10 @@ const App = () => {
     });
   }, []);
 
-  const handleChange = (ev) => {
-    ev.preventDefault();
-    setSearch(ev.target.value);
+  const handleFilter = (value) => {
+    setSearch(value);
   };
+
   let filteredItems = items.filter((i) => {
     return i.name.toUpperCase().includes(search.toUpperCase());
   });
@@ -25,10 +26,7 @@ const App = () => {
         <img className='logo' src={logo} alt='logo' title='Logo de Rick y Morty'></img>
       </header>
       <main>
-        <form className='form'>
-          <label htmlFor='search'></label>
-          <input className='form__input' type='text' name='search' onChange={handleChange}></input>
-        </form>
+        <Filter handleFilter={handleFilter} />
         <ul className='list'>
           {filteredItems.map((item) => (
             <li className='item' key={item.id}>
