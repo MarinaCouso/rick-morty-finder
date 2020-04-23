@@ -2,19 +2,8 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50vh;
-}
-
-.list {
-  list-style: none;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 1rem;
-  margin: 4rem 15rem;
+  width: 40vh;
   @media all and (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @media all and (min-width: 1200px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 50vh;
   }
 }
