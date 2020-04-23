@@ -25,9 +25,9 @@ const App = () => {
         <img className='logo' src={logo} alt='logo' title='Logo de Rick y Morty'></img>
       </header>
       <main>
-        <form>
+        <form className='form'>
           <label htmlFor='search'></label>
-          <input type='text' name='search' onChange={handleChange}></input>
+          <input className='form__input' type='text' name='search' onChange={handleChange}></input>
         </form>
         <ul className='list'>
           {filteredItems.map((item) => (

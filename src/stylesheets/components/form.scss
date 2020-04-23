@@ -1,0 +1,17 @@
+.form {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  &__input {
+    height: 2rem;
+    width: 15rem;
+    background-color: black;
+    border: teal 0.2rem solid;
+    color: white;
+    align-self: center;
+    font-size: 1.5rem;
+    @media all and (min-width: 768px) {
+      width: 25rem;
+    }
+  }
+}
