@@ -16,9 +16,9 @@ const App = () => {
     setSearch(ev.target.value);
   };
   let filteredItems = items.filter((i) => {
-    return i.name.includes(search);
+    return i.name.toUpperCase().includes(search.toUpperCase());
   });
-
+  console.log(search);
   console.log(filteredItems);
   return (
     <>
