@@ -21,7 +21,7 @@ const App = () => {
   let filteredItems = items.filter((i) => {
     return i.name.toUpperCase().includes(search.toUpperCase());
   });
-  console.log(items);
+
   return (
     <>
       <header>
