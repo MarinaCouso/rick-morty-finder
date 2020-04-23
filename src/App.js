@@ -3,6 +3,8 @@ import getDataFromApi from './service/Api';
 import { useState, useEffect } from 'react';
 import logo from './images/logo.png';
 import Filter from './components/Filter';
+import CharacterList from './components/CharacterList';
+
 const App = () => {
   let [items, setItems] = useState([]);
   let [search, setSearch] = useState('');
@@ -27,17 +29,7 @@ const App = () => {
       </header>
       <main>
         <Filter handleFilter={handleFilter} />
-        <ul className='list'>
-          {filteredItems.map((item) => (
-            <li className='item' key={item.id}>
-              <img className='item__img' src={item.image} alt={item.name} title={`picture of ${item.name}`}></img>
-              <div className='item__text'>
-                <h2 className='item__name'>{item.name}</h2>
-                <p className='item__attribute'>{item.specie}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <CharacterList filteredItems={filteredItems} />
       </main>
     </>
   );
