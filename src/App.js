@@ -4,13 +4,22 @@ import { useState, useEffect } from 'react';
 import logo from './images/logo.png';
 const App = () => {
   let [items, setItems] = useState([]);
+  let [search, setSearch] = useState('');
   useEffect(() => {
     getDataFromApi().then((data) => {
-      console.log(data);
       setItems(data);
     });
   }, []);
 
+  const handleChange = (ev) => {
+    ev.preventDefault();
+    setSearch(ev.target.value);
+  };
+  let filteredItems = items.filter((i) => {
+    return i.name.includes(search);
+  });
+
+  console.log(filteredItems);
   return (
     <>
       <header>
@@ -18,11 +27,12 @@ const App = () => {
       </header>
       <main>
         <form>
-          <label for='search'></label>
-          <input type='text' name='search'></input>
+          <label htmlFor='search'></label>
+          <input type='text' name='search' onChange={handleChange}></input>
         </form>
         <ul className='list'>
-          {items.map((item) => (
+          {console.log(filteredItems)}
+          {filteredItems.map((item) => (
             <li className='item' key={item.id}>
               <img className='item__img' src={item.image} alt={item.name} title={`picture of ${item.name}`}></img>
               <div className='item__text'>
