@@ -17,6 +17,10 @@ const App = () => {
         <img className='logo' src={logo} alt='logo' title='Logo de Rick y Morty'></img>
       </header>
       <main>
+        <form>
+          <label for='search'></label>
+          <input type='text' name='search'></input>
+        </form>
         <ul className='list'>
           {items.map((item) => (
             <li className='item' key={item.id}>
