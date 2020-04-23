@@ -1,7 +1,7 @@
 import React from 'react';
 import getDataFromApi from './service/Api';
 import { useState, useEffect } from 'react';
-import logo from './info/logo.png';
+import logo from './images/logo.png';
 const App = () => {
   let [items, setItems] = useState([]);
   useEffect(() => {
