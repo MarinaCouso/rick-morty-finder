@@ -18,8 +18,7 @@ const App = () => {
   let filteredItems = items.filter((i) => {
     return i.name.toUpperCase().includes(search.toUpperCase());
   });
-  console.log(search);
-  console.log(filteredItems);
+
   return (
     <>
       <header>
@@ -31,7 +30,6 @@ const App = () => {
           <input type='text' name='search' onChange={handleChange}></input>
         </form>
         <ul className='list'>
-          {console.log(filteredItems)}
           {filteredItems.map((item) => (
             <li className='item' key={item.id}>
               <img className='item__img' src={item.image} alt={item.name} title={`picture of ${item.name}`}></img>
