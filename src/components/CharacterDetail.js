@@ -1,26 +1,27 @@
 import React from 'react';
 
 const CharacterDetail = (props) => {
+  console.log(props);
   return (
     <>
-      <a className='article__link' href={`'./character/${props.filteredItems.id}'`}>
+      <a className='article__link' href={`'./character/${props.character.id}'`}>
         {'< Volver'}
       </a>
-      <article className='article' key={props.filteredItems.id}>
-        <img className='article__img' src={props.filteredItems.image} alt={props.filteredItems.name} title={`picture of ${props.filteredItems.name}`}></img>
+      <article className='article' key={props.character.id}>
+        <img className='article__img' src={props.character.image} alt={props.character.name} title={`picture of ${props.character.name}`}></img>
         <div className='article__text'>
-          <h2 className='article__name'>{props.filteredItems.name}</h2>
+          <h2 className='article__name'>{props.character.name}</h2>
           <p className='article__attribute'>
-            <span className='article__attribute__bold'>Status:</span> {props.filteredItems.status}
+            <span className='article__attribute__bold'>Status:</span> {props.character.status}
           </p>
           <p className='article__attribute'>
-            <span className='article__attribute__bold'>Species:</span> {props.filteredItems.specie}
+            <span className='article__attribute__bold'>Species:</span> {props.character.specie}
           </p>
           <p className='article__attribute'>
-            <span className='article__attribute__bold'>Origin:</span> {props.filteredItems.origin}
+            <span className='article__attribute__bold'>Origin:</span> {props.character.origin}
           </p>
           <p className='article__attribute'>
-            <span className='article__attribute__bold'>Episodes:</span> {props.filteredItems.episodes}
+            <span className='article__attribute__bold'>Episodes:</span> {props.character.episodes}
           </p>
         </div>
       </article>

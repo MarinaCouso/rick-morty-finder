@@ -24,10 +24,8 @@ const App = () => {
     return i.name.toUpperCase().includes(search.toUpperCase());
   });
   const renderCharacterDetail = (props) => {
-    console.log(props);
-    debugger;
     const characterId = props.match.params.id;
-    console.log(items);
+
     const foundCharacter = items.find((i) => {
       return i.id.toString() === characterId;
     });
