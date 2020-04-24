@@ -1,5 +1,9 @@
 .item {
   background-color: teal;
+  &__link {
+    text-decoration: none;
+    color: white;
+  }
   &__img {
     width: 100%;
   }
@@ -14,6 +18,9 @@
   }
   &__name {
     margin: 0.5rem 0.5rem 0.3rem 0.7rem;
+    @media all and (min-width: 768px) {
+      font-size: 1.3rem;
+    }
   }
   &__attribute {
     margin: 0.3rem 0.5rem 0.3rem 0.7rem;

@@ -3,10 +3,9 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 1rem;
-  margin: 4rem;
+  margin: 4rem 7rem;
   @media all and (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
-    margin: 4rem 15rem;
   }
   @media all and (min-width: 1200px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
