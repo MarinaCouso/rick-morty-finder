@@ -23,8 +23,19 @@ const App = () => {
   let filteredItems = items.filter((i) => {
     return i.name.toUpperCase().includes(search.toUpperCase());
   });
-  const renderCharacterDetail = (props) => {};
-  // (filteredItems) => <CharacterDetail filteredItems={filteredItems} match={filteredItems.id.match} />
+  const renderCharacterDetail = (props) => {
+    console.log(props);
+    debugger;
+    const characterId = props.match.params.id;
+    console.log(items);
+    const foundCharacter = items.find((i) => {
+      return i.id.toString() === characterId;
+    });
+    if (foundCharacter !== undefined) {
+      return <CharacterDetail character={foundCharacter} />;
+    }
+  };
+
   return (
     <>
       <header>
