@@ -4,10 +4,9 @@ const CharacterDetail = (props) => {
   console.log(props);
   return (
     <div className='article__box'>
-      <a className='article__link__text' href={`'./character/${props.character.id}'`}>
+      <a className='article__link' href={`'./character/${props.character.id}'`}>
         {'< Volver'}
       </a>
-
       <article className='article' key={props.character.id}>
         <img className='article__img' src={props.character.image} alt={props.character.name} title={`picture of ${props.character.name}`}></img>
         <div className='article__text'>
