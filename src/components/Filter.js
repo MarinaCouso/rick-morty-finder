@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 const Filter = (props) => {
   const handleChange = (ev) => {
     ev.preventDefault();
@@ -18,5 +18,5 @@ const Filter = (props) => {
     </form>
   );
 };
-
+Filter.propTypes = { search: PropTypes.string };
 export default Filter;
