@@ -1,7 +1,6 @@
 import React from 'react';
 
 const CharacterDetail = (props) => {
-  console.log(props);
   return (
     <div className='article__box'>
       <a className='article__link' href={`'./character/${props.character.id}'`}>

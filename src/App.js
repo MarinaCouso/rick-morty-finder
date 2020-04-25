@@ -21,27 +21,16 @@ const App = () => {
     setSearch(value);
   };
 
-  let filteredItems = '';
-  let filterItems = () => {
-    debugger;
-    for (const item of items) {
-      if (item.name.toUpperCase().includes(search.toUpperCase()) === true) {
-        filteredItems = items.filter((i) => {
-          return i.name.toUpperCase().includes(search.toUpperCase());
-        });
-        return <CharacterList filteredItems={filteredItems} />;
-      } else if (item.name.toUpperCase().includes(search.toUpperCase()) === false) {
-        return <Error search={search} />;
-      }
-    }
-  };
+  let filterItems = items.filter((i) => {
+    return i.name.toUpperCase().includes(search.toUpperCase());
+  });
 
   const renderCharacterDetail = (props) => {
     const characterId = props.match.params.id;
-    const foundCharacter = items.find((i) => {
-      return i.id.toString() === characterId;
-    });
-    if (foundCharacter !== undefined) {
+    const foundCharacter = items.find((i) => i.id.toString() === characterId);
+    if (foundCharacter === undefined) {
+      return <Error search={search} />;
+    } else if (foundCharacter !== undefined) {
       return <CharacterDetail character={foundCharacter} />;
     }
   };
@@ -55,8 +44,8 @@ const App = () => {
         <Switch>
           <Route path='/character/:id' render={renderCharacterDetail}></Route>
           <Route exact path='/'>
-            <Filter handleFilter={handleFilter} />
-            {filterItems()}
+            <Filter handleFilter={handleFilter} search={search} />
+            <CharacterList filterItems={filterItems} />
           </Route>
         </Switch>
       </main>

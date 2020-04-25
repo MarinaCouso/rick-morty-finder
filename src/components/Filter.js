@@ -1,10 +1,9 @@
 import React from 'react';
 
 const Filter = (props) => {
-  let value = '';
   const handleChange = (ev) => {
     ev.preventDefault();
-    value = ev.target.value;
+    let value = ev.target.value;
     props.handleFilter(value);
   };
   const handleKeyDown = (ev) => {
@@ -15,7 +14,7 @@ const Filter = (props) => {
   return (
     <form className='form'>
       <label htmlFor='search'></label>
-      <input className='form__input' type='text' name='search' onChange={handleChange} onKeyDown={handleKeyDown}></input>
+      <input className='form__input' type='text' name='search' value={props.search} onChange={handleChange} onKeyDown={handleKeyDown}></input>
     </form>
   );
 };
