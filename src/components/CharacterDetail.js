@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const CharacterDetail = (props) => {
   return (
@@ -27,5 +28,13 @@ const CharacterDetail = (props) => {
     </div>
   );
 };
-
+CharacterDetail.propTypes = {
+  id: PropTypes.number,
+  name: PropTypes.string,
+  image: PropTypes.string,
+  status: PropTypes.string,
+  specie: PropTypes.string,
+  origin: PropTypes.string,
+  episodes: PropTypes.number,
+};
 export default CharacterDetail;
