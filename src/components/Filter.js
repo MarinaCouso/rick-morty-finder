@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 const Filter = (props) => {
+  console.log(props);
   const handleChange = (ev) => {
     ev.preventDefault();
     let value = ev.target.value;
@@ -12,9 +13,9 @@ const Filter = (props) => {
     }
   };
   return (
-    <form className='form'>
+    <form className='form' onKeyDown={handleKeyDown}>
       <label htmlFor='search'></label>
-      <input className='form__input' type='text' name='search' value={props.search} onChange={handleChange} onKeyDown={handleKeyDown}></input>
+      <input className='form__input' type='text' name='search' value={props.search} onChange={handleChange} placeholder='Busca aquí un personaje'></input>
     </form>
   );
 };
