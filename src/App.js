@@ -6,7 +6,8 @@ import logo from './images/logo.png';
 import Filter from './components/Filter';
 import CharacterList from './components/CharacterList';
 import CharacterDetail from './components/CharacterDetail';
-import ErrorSearch from './components/ErrorSearch';
+
+import ErrorRoute from './components/ErrorRoute';
 
 const App = () => {
   let [items, setItems] = useState([]);
@@ -29,7 +30,7 @@ const App = () => {
     const characterId = props.match.params.id;
     const foundCharacter = items.find((i) => i.id.toString() === characterId);
     if (foundCharacter === undefined) {
-      return <p>No hay ningún personaje que coincida con tu búsqueda</p>;
+      return <ErrorRoute id={characterId} />;
     } else if (foundCharacter !== undefined) {
       return <CharacterDetail character={foundCharacter} />;
     }

@@ -3,8 +3,6 @@ import CharacterCard from './CharacterCard';
 import ErrorSearch from './ErrorSearch';
 
 const CharacterList = (props) => {
-  debugger;
-  console.log(props);
   const errorSearch = props.filteredItems.length === 0 ? <ErrorSearch search={props.search} /> : '';
 
   return (
