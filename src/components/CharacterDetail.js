@@ -1,7 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import alive from '../images/alive.svg';
+import dead from '../images/dead.svg';
+import question from '../images/question.svg';
 const CharacterDetail = (props) => {
+  let icon = '';
+  const getIcon = () => {
+    if (props.character.status === 'Alive') {
+      return (icon = alive);
+    } else if (props.character.status === 'Dead') {
+      return (icon = dead);
+    } else {
+      return (icon = question);
+    }
+  };
+  getIcon(props);
+
   return (
     <div className='article__box'>
       <a className='article__link' href={`'./character/${props.character.id}'`}>
@@ -12,7 +26,7 @@ const CharacterDetail = (props) => {
         <div className='article__text'>
           <h2 className='article__name'>{props.character.name}</h2>
           <p className='article__attribute'>
-            <span className='article__attribute__title'>Status:</span> {props.character.status}
+            <span className='article__attribute__title'>Status:</span> {props.character.status} <img src={icon} alt='status'></img>
           </p>
           <p className='article__attribute'>
             <span className='article__attribute__title'>Species:</span> {props.character.specie}
