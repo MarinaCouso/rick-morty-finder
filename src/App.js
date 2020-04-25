@@ -6,7 +6,7 @@ import logo from './images/logo.png';
 import Filter from './components/Filter';
 import CharacterList from './components/CharacterList';
 import CharacterDetail from './components/CharacterDetail';
-import Error from './components/Error';
+import ErrorSearch from './components/ErrorSearch';
 
 const App = () => {
   let [items, setItems] = useState([]);
@@ -21,7 +21,7 @@ const App = () => {
     setSearch(value);
   };
 
-  let filterItems = items.filter((i) => {
+  let filteredItems = items.filter((i) => {
     return i.name.toUpperCase().includes(search.toUpperCase());
   });
 
@@ -29,7 +29,7 @@ const App = () => {
     const characterId = props.match.params.id;
     const foundCharacter = items.find((i) => i.id.toString() === characterId);
     if (foundCharacter === undefined) {
-      return <Error search={search} />;
+      return <p>No hay ningún personaje que coincida con tu búsqueda</p>;
     } else if (foundCharacter !== undefined) {
       return <CharacterDetail character={foundCharacter} />;
     }
@@ -45,7 +45,7 @@ const App = () => {
           <Route path='/character/:id' render={renderCharacterDetail}></Route>
           <Route exact path='/'>
             <Filter handleFilter={handleFilter} search={search} />
-            <CharacterList filterItems={filterItems} />
+            <CharacterList search={search} filteredItems={filteredItems} />
           </Route>
         </Switch>
       </main>
