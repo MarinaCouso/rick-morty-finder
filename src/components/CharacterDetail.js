@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 import alive from '../images/alive.svg';
 import dead from '../images/dead.svg';
@@ -18,9 +20,9 @@ const CharacterDetail = (props) => {
 
   return (
     <div className='article__box'>
-      <a className='article__link' href={`'./character/${props.character.id}'`}>
-        {'< Volver'}
-      </a>
+      <Link className='article__link' to={`/`}>
+        &lt; Volver
+      </Link>
       <article className='article' key={props.character.id}>
         <img className='article__img' src={props.character.image} alt={props.character.name} title={`picture of ${props.character.name}`}></img>
         <div className='article__text'>

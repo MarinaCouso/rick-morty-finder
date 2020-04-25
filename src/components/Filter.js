@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 const Filter = (props) => {
-  console.log(props);
   const handleChange = (ev) => {
     ev.preventDefault();
     let value = ev.target.value;

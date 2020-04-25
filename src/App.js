@@ -36,10 +36,11 @@ const App = () => {
 
   const renderCharacterDetail = (props) => {
     const characterId = props.match.params.id;
+    console.log(characterId);
     const foundCharacter = items.find((i) => i.id.toString() === characterId);
     if (foundCharacter === undefined) {
       return <ErrorRoute id={characterId} />;
-    } else if (foundCharacter !== undefined) {
+    } else {
       return <CharacterDetail character={foundCharacter} />;
     }
   };

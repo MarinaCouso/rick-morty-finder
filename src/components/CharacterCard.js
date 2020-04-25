@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const CharacterCard = (props) => {
-  console.log(props);
   return props.filteredItems.map((item) => (
     <li className='item' key={item.id}>
       <Link className='item__link' to={`/character/${item.id}`}>
