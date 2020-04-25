@@ -6,7 +6,6 @@ import logo from './images/logo.png';
 import Filter from './components/Filter';
 import CharacterList from './components/CharacterList';
 import CharacterDetail from './components/CharacterDetail';
-
 import ErrorRoute from './components/ErrorRoute';
 
 const App = () => {
@@ -21,6 +20,15 @@ const App = () => {
   const handleFilter = (value) => {
     setSearch(value);
   };
+  items.sort(function (a, b) {
+    if (a.name.toUpperCase() > b.name.toUpperCase()) {
+      return 1;
+    }
+    if (a.name.toUpperCase() < b.name.toUpperCase()) {
+      return -1;
+    }
+    return 0;
+  });
 
   let filteredItems = items.filter((i) => {
     return i.name.toUpperCase().includes(search.toUpperCase());
