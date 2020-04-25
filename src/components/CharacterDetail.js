@@ -26,7 +26,7 @@ const CharacterDetail = (props) => {
         <div className='article__text'>
           <h2 className='article__name'>{props.character.name}</h2>
           <p className='article__attribute'>
-            <span className='article__attribute__title'>Status:</span> {props.character.status} <img src={icon} alt='status'></img>
+            <span className='article__attribute__title'>Status:</span> {props.character.status} <img className='article__attribute__icon' src={icon} alt='status'></img>
           </p>
           <p className='article__attribute'>
             <span className='article__attribute__title'>Species:</span> {props.character.specie}
