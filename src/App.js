@@ -6,6 +6,7 @@ import logo from './images/logo.png';
 import Filter from './components/Filter';
 import CharacterList from './components/CharacterList';
 import CharacterDetail from './components/CharacterDetail';
+import Error from './components/Error';
 
 const App = () => {
   let [items, setItems] = useState([]);
@@ -20,12 +21,23 @@ const App = () => {
     setSearch(value);
   };
 
-  let filteredItems = items.filter((i) => {
-    return i.name.toUpperCase().includes(search.toUpperCase());
-  });
+  let filteredItems = '';
+  let filterItems = () => {
+    debugger;
+    for (const item of items) {
+      if (item.name.toUpperCase().includes(search.toUpperCase()) === true) {
+        filteredItems = items.filter((i) => {
+          return i.name.toUpperCase().includes(search.toUpperCase());
+        });
+        return <CharacterList filteredItems={filteredItems} />;
+      } else if (item.name.toUpperCase().includes(search.toUpperCase()) === false) {
+        return <Error search={search} />;
+      }
+    }
+  };
+
   const renderCharacterDetail = (props) => {
     const characterId = props.match.params.id;
-
     const foundCharacter = items.find((i) => {
       return i.id.toString() === characterId;
     });
@@ -44,7 +56,7 @@ const App = () => {
           <Route path='/character/:id' render={renderCharacterDetail}></Route>
           <Route exact path='/'>
             <Filter handleFilter={handleFilter} />
-            <CharacterList filteredItems={filteredItems} />
+            {filterItems()}
           </Route>
         </Switch>
       </main>
