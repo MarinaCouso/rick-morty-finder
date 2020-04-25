@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const CharacterCard = (props) => {
+  console.log(props);
   return props.filteredItems.map((item) => (
     <li className='item' key={item.id}>
       <Link className='item__link' to={`/character/${item.id}`}>
@@ -15,4 +17,10 @@ const CharacterCard = (props) => {
   ));
 };
 
+CharacterCard.propTypes = {
+  id: PropTypes.number,
+  name: PropTypes.string,
+  image: PropTypes.string,
+  status: PropTypes.string,
+};
 export default CharacterCard;

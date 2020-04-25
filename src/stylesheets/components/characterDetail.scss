@@ -1,26 +1,65 @@
 .article {
   background-color: teal;
   display: flex;
-  padding: 2rem 5rem 2rem 2rem;
-  width: 50vh;
-  margin: 0rem auto 0rem auto;
+  padding: 1rem;
+  flex-direction: column;
+  height: 70vh;
+  width: 42vh;
+  margin: 0rem 1.5rem 0rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  @media all and (min-width: 768px) {
+    width: 90vh;
+    flex-direction: row;
+    padding: 1rem 2rem 3rem 2rem;
+    margin: 0rem auto 0rem auto;
+  }
+  @media all and (min-width: 1200px) {
+    width: 90vh;
+    height: 50vh;
+    flex-direction: row;
+    padding: 1rem 2rem 0rem 0rem;
+    margin: 0rem auto 0rem auto;
+  }
   &__box {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    width: 50vh;
-    margin: 6rem auto 0rem auto;
+    align-content: flex-start;
+    margin-top: 3rem;
+    @media all and (min-width: 768px) {
+      margin-top: 6rem;
+      align-content: flex-end;
+    }
   }
   &__link {
     display: inline-block;
-    &__text {
-      text-decoration: none;
-      color: white;
-      font-size: 1.2rem;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    margin: 0rem 0rem 1rem 13rem;
+    @media all and (min-width: 768px) {
+      margin: 0rem 7rem 0rem auto;
+    }
+    @media all and (min-width: 1200px) {
+      margin: 0rem 20rem 1rem auto;
+    }
+  }
+  &__img {
+    width: 60vw;
+    @media all and (min-width: 768px) {
+      width: 40vw;
+    }
+    @media all and (min-width: 1200px) {
+      width: 20vw;
     }
   }
   &__text {
-    margin: 3rem 2rem;
+    margin: 0;
+    text-align: center;
+    @media all and (min-width: 768px) {
+      margin: 3rem 0rem 3rem 2rem;
+      text-align: left;
+    }
   }
   &__name {
     margin-bottom: 0.5rem;
@@ -29,6 +68,9 @@
     margin: 0.5rem 0rem;
     &__title {
       font-weight: bold;
+    }
+    &__icon {
+      width: 1rem;
     }
   }
 }

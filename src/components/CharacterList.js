@@ -1,11 +1,17 @@
 import React from 'react';
 import CharacterCard from './CharacterCard';
+import ErrorSearch from './ErrorSearch';
 
 const CharacterList = (props) => {
+  const errorSearch = props.filteredItems.length === 0 ? <ErrorSearch search={props.search} /> : '';
+
   return (
-    <ul className='list'>
-      <CharacterCard filteredItems={props.filteredItems} />
-    </ul>
+    <>
+      {errorSearch}
+      <ul className='list'>
+        <CharacterCard filteredItems={props.filteredItems} />
+      </ul>
+    </>
   );
 };
 
