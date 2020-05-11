@@ -10,14 +10,14 @@ Este proyecto utiliza React para su desarrollo, debiendo instalar también React
 
 ## Guía de inicio rápido
 
-Puedes probar esta web entrando en la GitPage que hemos habilitado para que puedas probarla: http://beta.adalab.es/modulo-3-evaluacion-final-MarinaCouso/
+Puedes probar esta web entrando en la GitPage que hemos habilitado para que puedas probarla: https://marinacouso.github.io/rick-morty-finder/
 
-<img src="https://github.com/MarinaCouso/rick-morty/blob/master/info/LandingPage.png" />
+<img src="https://github.com/MarinaCouso/rick-morty-finder/blob/master/info/LandingPage.png" />
 
 Como puedes observar, hay un buscador para insertar el nombre del personaje que quieres buscar. Si escribes se filtrará automáticamente el listado de personajes cuyos nombres incluyan las letras que has indicado.
 Si seleccionas algún personaje clickando encima, se te abrirá una nueva página con más detalles sobre el mismo, tal como aparece en la siguiente imagen:
 
-<img src="https://github.com/MarinaCouso/rick-morty/blob/master/info/CharacterDetail.png" />
+<img src="https://github.com/MarinaCouso/rick-morty-finder/blob/master/info/CharacterDetail.png" />
 
 Si quieres volver a la lista principal, śólo tienes que clickar en 'Volver'.
 
