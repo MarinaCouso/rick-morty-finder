@@ -12,20 +12,18 @@ Este proyecto utiliza React para su desarrollo, debiendo instalar también React
 
 Puedes probar esta web entrando en la GitPage que hemos habilitado para que puedas probarla: http://beta.adalab.es/modulo-3-evaluacion-final-MarinaCouso/
 
-<img src="https://github.com/Adalab/modulo-2-evaluacion-final-MarinaCouso/blob/master/src/info/LandingPage.png" />
+<img src="https://github.com/MarinaCouso/rick-morty/blob/master/info/LandingPage.png" />
 
 Como puedes observar, hay un buscador para insertar el nombre del personaje que quieres buscar. Si escribes se filtrará automáticamente el listado de personajes cuyos nombres incluyan las letras que has indicado.
 Si seleccionas algún personaje clickando encima, se te abrirá una nueva página con más detalles sobre el mismo, tal como aparece en la siguiente imagen:
 
-<img src="https://github.com/Adalab/modulo-2-evaluacion-final-MarinaCouso/blob/master/src/info/CharacterDetail.png" />
+<img src="https://github.com/MarinaCouso/rick-morty/blob/master/info/CharacterDetail.png" />
 
 Si quieres volver a la lista principal, śólo tienes que clickar en 'Volver'.
 
 Si ningún personaje coincide con tu búsqueda, aparecerá un mensaje que te lo indicará, así como si quieres acceder directamente con la ruta al personaje pero esta es errónea.
 
-
 ## Estructura del proyecto
-
 
 La estructura de carpetas tiene esta pinta:
 
